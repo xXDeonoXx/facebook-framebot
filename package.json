@@ -1,0 +1,21 @@
+{
+  "name": "selenium-framebot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^83.0.0",
+    "selenium-webdriver": "^4.0.0-alpha.7",
+    "axios": "^0.19.2",
+    "ffmpeg-extract-frames": "^2.0.2",
+    "fluent-ffmpeg": "^2.1.2",
+    "imgur": "^0.3.1",
+    "nodemon": "^2.0.4"
+  }
+}
