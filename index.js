@@ -12,7 +12,7 @@ process.env['PATH'] += config.selenium_path;
 async function postImage(image) {
   var options = new chrome.Options();
   options.addArguments('--disable-notifications');
-  // options.addArguments('--headless');
+  options.addArguments('--headless');
 
   const driver = await new webdriver.Builder()
     .forBrowser('chrome')
@@ -63,7 +63,7 @@ async function postImage(image) {
   });
   let input = await driver.findElement(
     webdriver.By.xpath(
-      './/input[@accept="image/*,image/heif,image/heic,video/*,video/mp4,video/x-m4v,video/x-matroska"]'
+      './/input[@accept="image/*,image/heif,image/heic,video/*,video/mp4,video/x-m4v,video/x-matroska,.mkv"]'
     )
   );
   input.sendKeys(image.path);
@@ -163,6 +163,7 @@ async function execute() {
     });
     return;
   } catch (error) {
+    console.log(error);
     execute();
   }
 }
