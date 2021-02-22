@@ -31,8 +31,14 @@ async function postImage(image) {
   await password.clear();
   await password.sendKeys(config.password);
 
-  let loginbutton = driver.findElement(webdriver.By.xpath(`//*[@id="u_0_b"]`));
-  await loginbutton.click();
+  await actions
+    .sendKeys(webdriver.Key.TAB, webdriver.Key.TAB, webdriver.Key.ENTER)
+    .perform();
+
+  // let loginbutton = driver.findElement(
+  //   webdriver.By.xpath(`//*[@id="u_0_d_Zd"]`)
+  // );
+  // await loginbutton.click();
 
   await driver.manage().setTimeouts({ implicit: 5000 });
 
@@ -81,6 +87,7 @@ async function postImage(image) {
       resolve();
     }, 5000);
   });
+
   await actions
     .sendKeys(
       webdriver.Key.TAB,
@@ -94,6 +101,7 @@ async function postImage(image) {
       webdriver.Key.ENTER
     )
     .perform();
+
   await new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve();
